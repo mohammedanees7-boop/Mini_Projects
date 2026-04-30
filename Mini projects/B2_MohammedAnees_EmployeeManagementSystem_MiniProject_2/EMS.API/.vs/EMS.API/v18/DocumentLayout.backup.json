@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\ems.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:ems.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|c:\\cognizant\\mini projects\\ems-miniproject2-fresh\\ems.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}|EMS.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EMS.API",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\EMS.API.csproj",
+              "RelativeDocumentMoniker": "EMS.API.csproj",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\EMS.API.csproj",
+              "RelativeToolTip": "EMS.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-17T15:21:27.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T12:57:59.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAAAF4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T09:11:22.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-17T06:21:29.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAADwv2wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T06:19:46.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\cognizant\\Mini projects\\EMS-MiniProject2-Fresh\\EMS.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-17T05:44:53.144Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

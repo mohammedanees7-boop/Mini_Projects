@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Incident Auto-Triage Report</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #1a2340 0%, #2c3e6b 100%);
+      color: #fff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header p  { font-size: 0.82rem; opacity: 0.75; margin-top: 4px; }
+    .container { max-width: 1300px; margin: 28px auto; padding: 0 20px; }
+
+    /* Summary cards */
+    .summary {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-align: center;
+      min-width: 110px;
+    }
+    .card .num { font-size: 2rem; font-weight: 800; color: #2c3e6b; }
+    .card .lbl { font-size: 0.75rem; color: #888; margin-top: 2px; }
+
+    /* Breakdown panels */
+    .breakdown {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+    }
+    .breakdown h3 { font-size: 0.85rem; color: #555; margin-bottom: 10px; }
+
+    .badge {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin: 2px;
+    }
+    .tag-type, .tag-team {
+      display: inline-block;
+      background: #eef0f7;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      margin: 2px;
+    }
+
+    /* Table */
+    .table-wrap {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .table-wrap h3 {
+      padding: 16px 24px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #eee;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    thead tr { background: #1a2340; color: #fff; }
+    th { padding: 11px 14px; text-align: left; font-weight: 600; }
+    tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.15s; }
+    tbody tr:hover { background: #f7f9ff; }
+    td { padding: 10px 14px; vertical-align: middle; }
+    .id-cell { font-weight: 700; color: #2c3e6b; }
+
+    .ticket {
+      display: inline-block;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin: 1px;
+    }
+    .ticket.snow  { background: #e8f5e9; color: #2e7d32; }
+    .ticket.jira  { background: #e3f2fd; color: #1565c0; }
+    .ticket.azure { background: #fce4ec; color: #880e4f; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🖥️ IT Incident Auto-Triage Report</h1>
+      <p>Generated: 2026-04-28 00:42:29 &nbsp;|&nbsp; Total incidents: 12</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Summary Cards -->
+    <div class="summary">
+      <div class="card"><div class="num">12</div><div class="lbl">Total Incidents</div></div>
+      <div class="card"><div class="num" style="color:#e74c3c">5</div><div class="lbl">Critical</div></div>
+      <div class="card"><div class="num" style="color:#e67e22">3</div><div class="lbl">High</div></div>
+      <div class="card"><div class="num" style="color:#c0a000">4</div><div class="lbl">Medium</div></div>
+      <div class="card"><div class="num" style="color:#27ae60">0</div><div class="lbl">Low</div></div>
+    </div>
+
+    <!-- Breakdown by Type -->
+    <div class="breakdown">
+      <h3>Breakdown by Type</h3>
+      <span class="tag-type">⚙️ App <b>5</b></span> <span class="tag-type">🔐 Security <b>3</b></span> <span class="tag-type">🌐 Network <b>4</b></span>
+    </div>
+
+    <!-- Breakdown by Severity -->
+    <div class="breakdown">
+      <h3>Breakdown by Severity</h3>
+      <span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL <b>5</b></span> <span class="badge" style="background:#e67e22;color:#ffffff;">HIGH <b>3</b></span> <span class="badge" style="background:#f1c40f;color:#333333;">MEDIUM <b>4</b></span> <span class="badge" style="background:#2ecc71;color:#ffffff;">LOW <b>0</b></span> 
+    </div>
+
+    <!-- Breakdown by Team -->
+    <div class="breakdown">
+      <h3>Breakdown by Team</h3>
+      <span class="tag-team">Backend <b>5</b></span> <span class="tag-team">Security Ops <b>4</b></span> <span class="tag-team">Network Ops <b>3</b></span>
+    </div>
+
+    <!-- Incident Detail Table -->
+    <div class="table-wrap">
+      <h3>Incident Detail</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Severity</th>
+            <th>Type</th>
+            <th>Team</th>
+            <th>Timestamp</th>
+            <th>Tickets (SNOW | Jira | Azure)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="id-cell">INC001</td>
+              <td>⚙️ Database connection timeout on prod-db01</td>
+              <td><span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL</span></td>
+              <td>App</td>
+              <td>Backend</td>
+              <td>2024-08-12 09:15</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC001</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC001</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC001</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC004</td>
+              <td>🌐 Network switch offline in DC rack B</td>
+              <td><span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL</span></td>
+              <td>Network</td>
+              <td>Network Ops</td>
+              <td>2024-08-12 12:30</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC004</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC004</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC004</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC005</td>
+              <td>🔐 Ransomware signature detected on workstation</td>
+              <td><span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL</span></td>
+              <td>Security</td>
+              <td>Security Ops</td>
+              <td>2024-08-12 13:45</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC005</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC005</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC005</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC006</td>
+              <td>⚙️ Payment gateway timeout — Stripe API HTTP-503</td>
+              <td><span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL</span></td>
+              <td>App</td>
+              <td>Backend</td>
+              <td>2024-08-12 14:10</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC006</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC006</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC006</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC010</td>
+              <td>⚙️ Scheduled job failed — non-production env</td>
+              <td><span class="badge" style="background:#e74c3c;color:#ffffff;">CRITICAL</span></td>
+              <td>App</td>
+              <td>Backend</td>
+              <td>2024-08-12 02:30</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC010</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC010</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC010</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC002</td>
+              <td>🔐 Suspicious login attempts from unknown IP</td>
+              <td><span class="badge" style="background:#e67e22;color:#ffffff;">HIGH</span></td>
+              <td>Security</td>
+              <td>Security Ops</td>
+              <td>2024-08-12 10:22</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC002</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC002</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC002</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC003</td>
+              <td>⚙️ Checkout service returning NullPointerException</td>
+              <td><span class="badge" style="background:#e67e22;color:#ffffff;">HIGH</span></td>
+              <td>App</td>
+              <td>Backend</td>
+              <td>2024-08-12 11:05</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC003</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC003</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC003</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC012</td>
+              <td>🌐 DNS resolution intermittent on 10.2.0.0/16</td>
+              <td><span class="badge" style="background:#e67e22;color:#ffffff;">HIGH</span></td>
+              <td>Network</td>
+              <td>Network Ops</td>
+              <td>2024-08-12 16:20</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC012</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC012</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC012</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC007</td>
+              <td>🌐 Intermittent packet loss on VLAN 30</td>
+              <td><span class="badge" style="background:#f1c40f;color:#333333;">MEDIUM</span></td>
+              <td>Network</td>
+              <td>Network Ops</td>
+              <td>2024-08-12 14:35</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC007</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC007</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC007</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC008</td>
+              <td>🔐 Phishing email reported by 3 employees</td>
+              <td><span class="badge" style="background:#f1c40f;color:#333333;">MEDIUM</span></td>
+              <td>Security</td>
+              <td>Security Ops</td>
+              <td>2024-08-12 11:15</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC008</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC008</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC008</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC009</td>
+              <td>⚙️ API response slow — P95 latency 4.2s</td>
+              <td><span class="badge" style="background:#f1c40f;color:#333333;">MEDIUM</span></td>
+              <td>App</td>
+              <td>Backend</td>
+              <td>2024-08-12 15:00</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC009</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC009</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC009</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="id-cell">INC011</td>
+              <td>🌐 Minor firewall rule misconfiguration found</td>
+              <td><span class="badge" style="background:#f1c40f;color:#333333;">MEDIUM</span></td>
+              <td>Network</td>
+              <td>Security Ops</td>
+              <td>2024-08-12 13:00</td>
+              <td>
+                <span class="ticket snow" title="ServiceNow">MOCK-SNOW-INC011</span>
+                <span class="ticket jira" title="Jira">MOCK-JIRA-INC011</span>
+                <span class="ticket azure" title="Azure">MOCK-AZB-INC011</span>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <footer>IT Incident Auto-Triage Tracker — Mini Project 3</footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "INC001",
+    "title": "Database connection timeout on prod-db01",
+    "description": "Production database prod-db01 is experiencing connection timeouts. TCP connections to port 5432 are failing. The entire checkout pipeline is down. This is a production outage affecting all users.",
+    "reported_by": "monitoring-bot",
+    "timestamp": "2024-08-12T09:15:00Z",
+    "assigned_team": "Backend"
+  },
+  {
+    "id": "INC002",
+    "title": "Suspicious login attempts from unknown IP",
+    "description": "Multiple unauthorized brute-force login attempts detected from IP 203.0.113.45. Over 500 failed attempts in 10 minutes targeting the admin portal. Security team should investigate immediately.",
+    "reported_by": "siem-alert",
+    "timestamp": "2024-08-12T10:22:00Z",
+    "assigned_team": "Security Ops"
+  },
+  {
+    "id": "INC003",
+    "title": "Checkout service returning NullPointerException",
+    "description": "The checkout microservice is throwing NullPointerException on every order submission. Stack trace points to PaymentProcessor.java:87. HTTP 500 errors are being returned to all customers. High priority fix needed.",
+    "reported_by": "apm-tool",
+    "timestamp": "2024-08-12T11:05:00Z",
+    "assigned_team": "Backend"
+  },
+  {
+    "id": "INC004",
+    "title": "Network switch offline in DC rack B",
+    "description": "Core network switch SW-RACK-B04 has gone offline in the primary data centre rack B. ICMP ping is failing. VLAN 10 and VLAN 20 segments are unreachable. Multiple servers have lost connectivity.",
+    "reported_by": "nagios",
+    "timestamp": "2024-08-12T12:30:00Z",
+    "assigned_team": "Network Ops"
+  },
+  {
+    "id": "INC005",
+    "title": "Ransomware signature detected on workstation",
+    "description": "Antivirus endpoint protection detected a ransomware signature on workstation WIN-ACCT-07 in the Accounts department. Files in C:\\Users\\john are being encrypted. The workstation has been isolated from the network. Immediate SOC response required.",
+    "reported_by": "endpoint-protect",
+    "timestamp": "2024-08-12T13:45:00Z",
+    "assigned_team": "Security Ops"
+  },
+  {
+    "id": "INC006",
+    "title": "Payment gateway timeout — Stripe API HTTP-503",
+    "description": "The payment gateway integration is returning HTTP-503 Service Unavailable from the Stripe API endpoint. Timeout after 30 seconds on every request. All payment transactions are failing. Revenue impact is critical.",
+    "reported_by": "grafana-alert",
+    "timestamp": "2024-08-12T14:10:00Z",
+    "assigned_team": "Backend"
+  },
+  {
+    "id": "INC007",
+    "title": "Intermittent packet loss on VLAN 30",
+    "description": "Network monitoring shows intermittent packet loss of 15-20% on VLAN 30 in building 2. UDP traffic is most affected. The issue appears to be correlated with peak usage between 14:00-16:00. Degraded performance reported by end users.",
+    "reported_by": "network-mon",
+    "timestamp": "2024-08-12T14:35:00Z",
+    "assigned_team": "Network Ops"
+  },
+  {
+    "id": "INC008",
+    "title": "Phishing email reported by 3 employees",
+    "description": "Three employees in the Finance department have reported receiving a phishing email impersonating the CEO. The email contains a malicious link. Employees have not clicked the link. Email gateway filters missed this campaign. Medium priority security review needed.",
+    "reported_by": "helpdesk",
+    "timestamp": "2024-08-12T11:15:00Z",
+    "assigned_team": "Security Ops"
+  },
+  {
+    "id": "INC009",
+    "title": "API response slow — P95 latency 4.2s",
+    "description": "The product search API is showing degraded performance. P95 latency has risen to 4.2 seconds, up from the normal 350ms. The issue appears intermittent and may be related to slow database queries in the ORM layer. Users are experiencing slow search results.",
+    "reported_by": "datadog",
+    "timestamp": "2024-08-12T15:00:00Z",
+    "assigned_team": "Backend"
+  },
+  {
+    "id": "INC010",
+    "title": "Scheduled job failed — non-production env",
+    "description": "A nightly data cleanup scheduled job failed in the staging environment. The job exited with error code 1 due to a missing configuration file. No production systems are affected. Low priority — can be fixed during normal working hours.",
+    "reported_by": "cron-monitor",
+    "timestamp": "2024-08-12T02:30:00Z",
+    "assigned_team": "Backend"
+  },
+  {
+    "id": "INC011",
+    "title": "Minor firewall rule misconfiguration found",
+    "description": "During a routine security audit, a minor firewall rule misconfiguration was found on FW-DMZ-01. An inbound rule on port 8080 is broader than intended. There is no evidence of exploitation. Low severity — schedule a change window to correct the rule.",
+    "reported_by": "sec-audit",
+    "timestamp": "2024-08-12T13:00:00Z",
+    "assigned_team": "Security Ops"
+  },
+  {
+    "id": "INC012",
+    "title": "DNS resolution intermittent on 10.2.0.0/16",
+    "description": "DNS resolution is failing intermittently for hosts in the 10.2.0.0/16 subnet. Queries to the primary DNS server at 10.2.0.1 are timing out approximately 30% of the time. The issue is causing slow application startup times but services continue to run. Medium priority network investigation needed.",
+    "reported_by": "network-mon",
+    "timestamp": "2024-08-12T16:20:00Z",
+    "assigned_team": "Network Ops"
+  }
+]

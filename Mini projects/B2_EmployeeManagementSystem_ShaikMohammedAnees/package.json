@@ -1,0 +1,11 @@
+{
+  "name": "employee-management-dashboard",
+  "version": "1.0.0",
+  "description": "Employee Management System — Mini Project 1",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

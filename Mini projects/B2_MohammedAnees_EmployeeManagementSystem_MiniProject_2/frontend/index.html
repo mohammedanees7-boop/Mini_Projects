@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexForce EMS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════════════
+     AUTH SECTION
+═══════════════════════════════════════ -->
+<div id="authSection">
+  <div class="auth-grid"></div>
+  <div class="auth-orb2"></div>
+
+  <!-- LOGIN -->
+  <div id="loginView">
+    <div class="auth-card">
+      <div class="logo-mark">
+        <div class="logo-hex">
+          <svg viewBox="0 0 44 44" fill="none">
+            <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="url(#hexGrad)" opacity="0.9"/>
+            <polygon points="22,8 36,15.5 36,28.5 22,36 8,28.5 8,15.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+            <text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="13" fill="white">NF</text>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-title">NexForce</div>
+          <div class="logo-sub">EMS Platform</div>
+        </div>
+      </div>
+      <div class="auth-heading">Welcome back</div>
+      <p class="auth-sub">Sign in to your admin workspace</p>
+      <div id="loginGlobalError" class="global-error d-none"></div>
+      <form id="loginForm" novalidate>
+        <div class="auth-field">
+          <label class="auth-label" for="loginUsername">Username</label>
+          <input type="text" class="auth-input" id="loginUsername" placeholder="e.g. admin" autocomplete="username"/>
+          <i class="bi bi-person fi"></i>
+          <div id="login-error-username" class="field-error d-none"></div>
+        </div>
+        <div class="auth-field">
+          <label class="auth-label" for="loginPassword">Password</label>
+          <input type="password" class="auth-input" id="loginPassword" placeholder="••••••••" autocomplete="current-password"/>
+          <i class="bi bi-lock fi"></i>
+          <div id="login-error-password" class="field-error d-none"></div>
+        </div>
+        <button type="submit" class="btn-auth"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</button>
+      </form>
+      <p class="auth-switch">New here? <a href="#" id="showSignupLink">Create account</a></p>
+      <p class="demo-hint">Admin: admin / admin123 &nbsp;|&nbsp; Viewer: viewer / viewer123</p>
+    </div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div id="signupView" style="display:none">
+    <div class="auth-card">
+      <div class="logo-mark">
+        <div class="logo-hex">
+          <svg viewBox="0 0 44 44" fill="none">
+            <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="url(#hexGrad)" opacity="0.9"/>
+            <polygon points="22,8 36,15.5 36,28.5 22,36 8,28.5 8,15.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+            <text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="13" fill="white">NF</text>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-title">NexForce</div>
+          <div class="logo-sub">EMS Platform</div>
+        </div>
+      </div>
+      <div class="auth-heading">Create account</div>
+      <p class="auth-sub">Register a new admin workspace</p>
+      <div id="signupGlobalError" class="global-error d-none"></div>
+      <form id="signupForm" novalidate>
+        <div class="auth-field">
+          <label class="auth-label" for="signupUsername">Username</label>
+          <input type="text" class="auth-input" id="signupUsername" placeholder="Choose a username" autocomplete="username"/>
+          <i class="bi bi-person fi"></i>
+          <div id="signup-error-username" class="field-error d-none"></div>
+        </div>
+        <div class="auth-field">
+          <label class="auth-label" for="signupPassword">Password</label>
+          <input type="password" class="auth-input" id="signupPassword" placeholder="Min. 6 characters" autocomplete="new-password"/>
+          <i class="bi bi-lock fi"></i>
+          <div id="signup-error-password" class="field-error d-none"></div>
+        </div>
+        <div class="auth-field">
+          <label class="auth-label" for="signupConfirmPassword">Confirm Password</label>
+          <input type="password" class="auth-input" id="signupConfirmPassword" placeholder="Repeat password" autocomplete="new-password"/>
+          <i class="bi bi-lock-fill fi"></i>
+          <div id="signup-error-confirmPassword" class="field-error d-none"></div>
+        </div>
+        <div class="auth-field">
+          <label class="auth-label" for="signupRole">Role</label>
+          <select class="auth-input" id="signupRole" style="padding-left:1rem">
+            <option value="Viewer">Viewer (read-only)</option>
+            <option value="Admin">Admin (full access)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-auth"><i class="bi bi-person-plus me-2"></i>Create Account</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="#" id="showLoginLink">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     APP SECTION
+═══════════════════════════════════════ -->
+<div id="appSection" style="display:none">
+
+  <!-- NAVBAR -->
+  <nav class="app-navbar">
+    <div class="nav-left">
+      <div class="nav-logo">
+        <svg width="30" height="30" viewBox="0 0 44 44" fill="none">
+          <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="url(#hexGrad)" opacity="0.9"/>
+          <text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="11" fill="white">NF</text>
+        </svg>
+        <span class="nav-logo-text">NexForce EMS</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link-item" id="navDashboard"><i class="bi bi-grid-1x2"></i> Dashboard</a>
+        <a href="#" class="nav-link-item" id="navEmployees"><i class="bi bi-people"></i> Employees</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="btn-nav-add" id="navAddEmployee"><i class="bi bi-plus-lg"></i> Add Employee</button>
+      <span class="role-badge" id="navRoleBadge">Admin</span>
+      <div class="nav-user"><i class="bi bi-person-circle"></i><span id="navbarUser">admin</span></div>
+      <button class="btn-nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+    </div>
+  </nav>
+
+  <div class="app-body">
+
+    <!-- DASHBOARD -->
+    <div id="dashboardSection" class="content-area">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title"><i class="bi bi-grid-1x2-fill"></i> Workforce <span>Overview</span></h1>
+          <p class="page-sub">Real-time summary of your organisation's headcount &amp; structure.</p>
+        </div>
+        <button class="btn-view-all" id="goToEmployeesBtn"><i class="bi bi-people"></i> View All Employees</button>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card kpi-total">
+          <div class="kpi-top"><div class="kpi-icon-wrap"><i class="bi bi-people-fill"></i></div><span class="kpi-trend">Headcount</span></div>
+          <div class="kpi-value" id="totalEmployees">0</div><div class="kpi-label">Total Employees</div>
+        </div>
+        <div class="kpi-card kpi-active">
+          <div class="kpi-top"><div class="kpi-icon-wrap"><i class="bi bi-person-check-fill"></i></div><span class="kpi-trend kpi-trend-green">On-Roll</span></div>
+          <div class="kpi-value" id="activeEmployees">0</div><div class="kpi-label">Active Members</div>
+        </div>
+        <div class="kpi-card kpi-inactive">
+          <div class="kpi-top"><div class="kpi-icon-wrap"><i class="bi bi-person-dash-fill"></i></div><span class="kpi-trend kpi-trend-red">Off-Roll</span></div>
+          <div class="kpi-value" id="inactiveEmployees">0</div><div class="kpi-label">Inactive Members</div>
+        </div>
+        <div class="kpi-card kpi-dept">
+          <div class="kpi-top"><div class="kpi-icon-wrap"><i class="bi bi-diagram-3-fill"></i></div><span class="kpi-trend kpi-trend-amber">Divisions</span></div>
+          <div class="kpi-value" id="totalDepartments">0</div><div class="kpi-label">Departments</div>
+        </div>
+      </div>
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="panel-head"><h6 class="panel-head-title"><i class="bi bi-bar-chart-fill"></i> Dept. Distribution</h6><span class="panel-badge">All Divisions</span></div>
+          <div class="panel-body" id="deptBreakdown"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h6 class="panel-head-title"><i class="bi bi-clock-history"></i> Recently Joined</h6><span class="panel-badge">Last 5</span></div>
+          <div class="panel-body" id="recentEmployeesList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYEES -->
+    <div id="employeeSection" class="content-area" style="display:none">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title"><i class="bi bi-people-fill"></i> Employees</h1>
+          <p class="page-sub">Manage, search, filter and sort your workforce.</p>
+        </div>
+        <button class="btn-nav-add" id="addEmployeeBtn"><i class="bi bi-plus-lg"></i> Add Employee</button>
+      </div>
+
+      <!-- Viewer notice -->
+      <div id="viewerNotice" class="viewer-notice" style="display:none">
+        <i class="bi bi-eye-fill"></i>
+        You have <strong>read-only access</strong>. Contact an Admin to make changes.
+      </div>
+
+      <div class="filter-strip">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="searchInput" placeholder="Search by name or email…"/>
+        </div>
+        <select id="deptFilter" class="filter-select">
+          <option value="all">All Departments</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Marketing">Marketing</option>
+          <option value="HR">HR</option>
+          <option value="Finance">Finance</option>
+          <option value="Operations">Operations</option>
+        </select>
+        <div class="status-pills" id="statusFilter">
+          <button type="button" class="active" data-status="all">All</button>
+          <button type="button" data-status="Active">Active</button>
+          <button type="button" data-status="Inactive">Inactive</button>
+        </div>
+        <div class="count-badge" id="employeeCountText">Showing 0 of 0 employees</div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-responsive">
+          <table class="emp-table">
+            <thead>
+              <tr>
+                <th>ID</th><th>Avatar</th>
+                <th class="sortable-col" data-sort="name">Name <span class="sort-icon">↕</span></th>
+                <th>Email</th><th>Department</th><th>Designation</th>
+                <th class="sortable-col" data-sort="salary">Salary <span class="sort-icon">↕</span></th>
+                <th class="sortable-col" data-sort="joinDate">Join Date <span class="sort-icon">↕</span></th>
+                <th>Status</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="paginationBar" class="pagination-wrap"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     MODALS
+═══════════════════════════════════════ -->
+
+<!-- Add/Edit -->
+<div class="modal fade" id="addEditEmployeeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-plus-fill"></i> <span id="empModalTitle">Add Employee</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editEmployeeId"/>
+        <form id="employeeForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label">First Name *</label><input type="text" class="form-control" id="empFirstName" placeholder="e.g. Ravi"/><div id="error-firstName" class="field-error d-none"></div></div>
+            <div class="col-md-6"><label class="form-label">Last Name *</label><input type="text" class="form-control" id="empLastName" placeholder="e.g. Shankar"/><div id="error-lastName" class="field-error d-none"></div></div>
+            <div class="col-md-6"><label class="form-label">Email *</label><input type="email" class="form-control" id="empEmail" placeholder="name@company.com"/><div id="error-email" class="field-error d-none"></div></div>
+            <div class="col-md-6"><label class="form-label">Phone *</label><input type="text" class="form-control" id="empPhone" placeholder="10-digit number" maxlength="10"/><div id="error-phone" class="field-error d-none"></div></div>
+            <div class="col-md-6">
+              <label class="form-label">Department *</label>
+              <select class="form-select" id="empDepartment">
+                <option value="">Select Department</option>
+                <option value="Engineering">Engineering</option><option value="Marketing">Marketing</option>
+                <option value="HR">HR</option><option value="Finance">Finance</option><option value="Operations">Operations</option>
+              </select>
+              <div id="error-department" class="field-error d-none"></div>
+            </div>
+            <div class="col-md-6"><label class="form-label">Designation *</label><input type="text" class="form-control" id="empDesignation" placeholder="e.g. Full Stack Developer"/><div id="error-designation" class="field-error d-none"></div></div>
+            <div class="col-md-6"><label class="form-label">Annual Salary (₹) *</label><input type="number" class="form-control" id="empSalary" placeholder="e.g. 920000" min="1"/><div id="error-salary" class="field-error d-none"></div></div>
+            <div class="col-md-6"><label class="form-label">Join Date *</label><input type="date" class="form-control" id="empJoinDate"/><div id="error-joinDate" class="field-error d-none"></div></div>
+            <div class="col-md-6">
+              <label class="form-label">Status *</label>
+              <select class="form-select" id="empStatus">
+                <option value="">Select Status</option>
+                <option value="Active">Active</option><option value="Inactive">Inactive</option>
+              </select>
+              <div id="error-status" class="field-error d-none"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn-save" id="empModalSubmitBtn">Save Employee</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- View -->
+<div class="modal fade" id="viewEmployeeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-person-badge-fill"></i> Employee Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="view-profile-top">
+          <div class="emp-avatar" id="viewModalAvatar"></div>
+          <div id="viewModalName"></div>
+          <span id="viewModalDept" class="dept-badge"></span>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-item"><label>Email</label><div class="dval" id="viewEmail"></div></div>
+          <div class="detail-item"><label>Phone</label><div class="dval" id="viewPhone"></div></div>
+          <div class="detail-item"><label>Designation</label><div class="dval" id="viewDesignation"></div></div>
+          <div class="detail-item"><label>Annual Salary</label><div class="dval dval-salary" id="viewSalary"></div></div>
+          <div class="detail-item"><label>Join Date</label><div class="dval" id="viewJoinDate"></div></div>
+          <div class="detail-item"><label>Status</label><div class="dval" id="viewStatus"></div></div>
+        </div>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn-cancel" data-bs-dismiss="modal">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header modal-header-danger">
+        <h5 class="modal-title"><i class="bi bi-exclamation-triangle-fill me-1"></i> Confirm Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="del-icon-wrap"><div class="del-circle"><i class="bi bi-person-x-fill"></i></div></div>
+        <p class="mb-1" style="color:var(--text-2);font-size:0.85rem">Are you sure you want to remove</p>
+        <p class="fw-bold mb-1" id="deleteEmployeeName" style="color:var(--text-1)"></p>
+        <p style="color:var(--text-3);font-size:0.78rem">This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer justify-content-center gap-2">
+        <button type="button" class="btn-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn-del" id="confirmDeleteBtn"><i class="bi bi-trash me-1"></i>Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toastContainer"></div>
+
+<!-- Scripts — config.js MUST be first -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/storageService.js"></script>
+<script src="js/authService.js"></script>
+<script src="js/employeeService.js"></script>
+<script src="js/validationService.js"></script>
+<script src="js/dashboardService.js"></script>
+<script src="js/uiService.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
